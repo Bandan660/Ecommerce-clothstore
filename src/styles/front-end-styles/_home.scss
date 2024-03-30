@@ -1,0 +1,51 @@
+.hero-section {
+  .carousel-caption {
+    position: absolute;
+    right: 15%;
+    top: 30%;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    text-align: left !important;
+
+    h2 {
+      font-family: "Segoe Script", "Savoye LET";
+      line-height: 1.334;
+      font-size: 2.5rem;
+      color: #777;
+    }
+    h3 {
+      font-size: 2.5em;
+      letter-spacing: 0.185em;
+    }
+    h4 {
+      font-size: 5.625em;
+    }
+    button {
+      border-color: #222529;
+      background-color: #222529;
+      color: #fff;
+      box-shadow: none;
+      padding: 1.1em 2.75em 1.125em;
+      font-size: 1.125em;
+      text-transform: uppercase;
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #34393f;
+      }
+    }
+  }
+}
+
+.category-slider {
+  padding: 4vh 4.28vw;
+
+  .section-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+  }
+}
