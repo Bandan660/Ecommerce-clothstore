@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
 
 const categoryData = [
@@ -45,16 +46,17 @@ const CategoryCarousel = () => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
+      items: 5,
+      slidesToSlide: 1, // optional, default to 1.
+      partialVisibilityGutter: 40,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
+      breakpoint: { max: 1024, min: 768 },
+      items: 3,
+      slidesToSlide: 1, // optional, default to 1.
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 768, min: 460 },
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
@@ -62,24 +64,24 @@ const CategoryCarousel = () => {
   return (
     <Carousel
       swipeable={false}
-      draggable={false}
-      showDots={true}
+      draggable={true}
+      showDots={false}
       responsive={responsive}
-      ssr={true} // means to render carousel on server-side.
+      // means to render carousel on server-side.
       infinite={true}
-      autoPlaySpeed={1000}
+      autoPlay
+      autoPlaySpeed={5000}
       keyBoardControl={true}
-      customTransition="all .5"
-      transitionDuration={500}
       containerClass="carousel-container"
-      removeArrowOnDeviceType={["tablet", "mobile"]}
+      customTransition="all 1s linear"
+      removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
     >
       {categoryData.map((category) => (
         <div key={category.id} className="category">
           <Link to={`/products/${category.name}`}>
             <img src={category.image} alt={category.name} />
-            <h2>{category.name}</h2>
           </Link>
+          <h5 className="category-name">{category.name}</h5>
         </div>
       ))}
     </Carousel>

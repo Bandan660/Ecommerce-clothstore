@@ -48,4 +48,101 @@
     text-transform: uppercase;
     font-size: 1.8rem;
   }
+
+  .category-name {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    color: #777;
+    margin-top: 1rem;
+  }
+}
+.Popular-Product {
+  .productCard {
+    &:hover .add-to-cart {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover .wish-list {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+    }
+    img {
+      width: 100%;
+    }
+    .product-details {
+      display: flex;
+      flex-direction: column;
+
+      align-items: flex-start;
+      .productName {
+        font-weight: 400;
+        font-size: 1.3rem;
+        font-family: "Poppins", sans-serif;
+      }
+      .productDescription {
+        font-size: 1rem;
+      }
+      .custom-rating {
+        color: #222529;
+      }
+    }
+    .add-to-cart {
+      position: absolute;
+      padding: 0.5rem;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      color: #fff;
+      background-color: #222529;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      font-family: Poppins, sans-serif;
+      text-transform: uppercase;
+      visibility: hidden;
+      opacity: 0;
+      transform: none;
+      margin: 0;
+      border: none;
+      line-height: 1.82;
+      transition: all 0.2s ease-in-out;
+      z-index: 2;
+    }
+    .wish-list {
+      top: 20px !important;
+      right: 30px;
+      border: none;
+      font-size: 1.5rem;
+      background-color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+      z-index: 2;
+
+      &:hover {
+        background-color: black;
+        color: #fff;
+      }
+    }
+  }
+}
+.features-section {
+  .features-box {
+    img {
+      width: 50px;
+      height:50px;
+    }
+  .features-description{
+    color:#7b858a;
+    font-size: .9rem;
+  }
+  }
 }
