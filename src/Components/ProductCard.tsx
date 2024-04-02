@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Rating from "@mui/material/Rating";
 import { FaRegHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 type ProductProps = {
   productId: string;
@@ -22,10 +23,11 @@ const ProductCard = ({
   handler,
 }: ProductProps) => {
   const [value, setValue] = useState<number | null>(2);
+  const navigate = useNavigate()
 
   return (
     <Fragment>
-      <div className="productCard col-6 col-sm-4 col-md-3 col-xl-3 my-3 d-flex flex-column align-items-center">
+      <div className="productCard col-6 col-sm-4 col-md-3 col-xl-3 my-3 d-flex flex-column align-items-center"    >
         <div className="w-100 position-relative">
           <img
             src={photo}
@@ -43,7 +45,7 @@ const ProductCard = ({
             Add to Bag
           </button>
         </div>
-        <div className="product-details mt-3">
+        <div className="product-details mt-3" onClick={() => navigate(`/product/${name}`)}>
           <h3 className="productName">{name}</h3>
 
           <p className="productPrice">₹ {price}</p>

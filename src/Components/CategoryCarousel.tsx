@@ -78,7 +78,7 @@ const CategoryCarousel = () => {
     >
       {categoryData.map((category) => (
         <div key={category.id} className="category">
-          <Link to={`/products/${category.name}`}>
+          <Link to={`/category/${category.name}`}>
             <img src={category.image} alt={category.name} />
           </Link>
           <h5 className="category-name">{category.name}</h5>

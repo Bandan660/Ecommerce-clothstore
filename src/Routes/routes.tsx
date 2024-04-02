@@ -2,6 +2,7 @@ import React, { Fragment, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Loader from "../Components/Loader";
 import Shop from "../Pages/MainScreen/Shop";
+import ProductDetails from "../Pages/MainScreen/ProductDetails";
 const Home = lazy(() => import("../Pages/MainScreen/Home"));
 
 // importing routes for admin
@@ -30,6 +31,7 @@ const Routing = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
           {/* define routes for admin */}
           <Route
           // element={

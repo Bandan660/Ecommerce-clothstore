@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-const user = { _id: "1", role: "user" };
+const user = { _id: "1", role: "admin" };
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (

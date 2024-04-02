@@ -8,7 +8,7 @@ import Table from "../../Components/admin/DashboardTable";
 
 const userImg =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp";
-  import data from "../../assets/data.json"
+  import data from "../../../public/assets/data.json"
 
 const Dashboard = () => {
   return (

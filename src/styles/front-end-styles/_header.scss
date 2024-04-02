@@ -1,8 +1,10 @@
 .header {
   width: 100%;
-  padding: 2rem 5rem;
-  position: absolute;
+  padding: 1rem 5rem;
+  position: sticky;
   z-index:100;
+  top:0;
+  background-color: #fff;
 
   .logo {
     img {

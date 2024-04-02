@@ -56,6 +56,7 @@ ul {
 @import "front-end-styles/header";
 @import "front-end-styles/footer";
 @import "front-end-styles/home";
+@import "front-end-styles/productDetails";
 
 .admin-container {
   @include grid(1fr 4fr, 2rem);

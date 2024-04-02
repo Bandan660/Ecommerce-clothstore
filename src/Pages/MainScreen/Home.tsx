@@ -204,6 +204,7 @@ const Home = () => {
                 handler={addToCart}
                 photo={product.photo}
                 description={product.description}
+             
               />
             ))}
           </div>
