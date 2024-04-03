@@ -27,7 +27,7 @@ const ProductCard = ({
 
   return (
     <Fragment>
-      <div className="productCard col-6 col-sm-4 col-md-3 col-xl-3 my-3 d-flex flex-column align-items-center"    >
+      <div className="productCard col-6 col-sm-4 col-md-3 col-xl-2 my-3 d-flex flex-column align-items-center"    >
         <div className="w-100 position-relative">
           <img
             src={photo}

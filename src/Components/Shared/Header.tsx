@@ -15,7 +15,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <Fragment>
-      <nav className="d-flex row header">
+      <div className=" position-sticky top-0 z-index-100 bg-white d-flex justify-content-center">
+      <nav className="d-flex row header container">
         <div className="d-flex col-md-8 align-content-center gap-5">
           <div className="logo">
             <img
@@ -114,6 +115,8 @@ const Header = () => {
           </ul>
         </div>
       </nav>
+      </div>
+     
     </Fragment>
   );
 };

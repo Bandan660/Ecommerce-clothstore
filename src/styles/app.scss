@@ -57,6 +57,7 @@ ul {
 @import "front-end-styles/footer";
 @import "front-end-styles/home";
 @import "front-end-styles/productDetails";
+@import "front-end-styles/cart";
 
 .admin-container {
   @include grid(1fr 4fr, 2rem);
@@ -119,11 +120,11 @@ ul {
     }
 
     td {
-      padding: 1rem;
+     
 
       img {
-        width: 4rem;
-        height: 4rem;
+        width: 5rem;
+        height: 5rem;
         object-fit: contain;
         border-radius: 10px;
       }
@@ -138,17 +139,12 @@ ul {
         text-decoration: none !important;
       }
       button {
-        width: 2rem;
-        height: 2rem;
-        font-size: 1.1rem;
+       
         border: none;
         outline: none;
         background-color: transparent;
         cursor: pointer;
-        color: rgb(255, 44, 44);
-        &:hover {
-          opacity: 0.6;
-        }
+     
       }
 
       &:first-child {

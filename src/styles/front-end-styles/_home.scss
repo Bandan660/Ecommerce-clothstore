@@ -80,11 +80,12 @@
       align-items: flex-start;
       .productName {
         font-weight: 400;
-        font-size: 1.3rem;
+        font-size: 1rem;
         font-family: "Poppins", sans-serif;
       }
       .productDescription {
-        font-size: 1rem;
+        font-size: .9rem;
+        color:#777
       }
       .custom-rating {
         color: #222529;

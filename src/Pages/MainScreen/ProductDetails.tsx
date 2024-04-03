@@ -6,34 +6,52 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { FaStar } from "react-icons/fa";
+import { Tab, Tabs } from "@mui/material";
+import {
+  FaHeart,
+  FaMinus,
+  FaPlus,
+  FaRegHeart,
+  FaShoppingCart,
+  FaStar,
+} from "react-icons/fa";
+import CategoryCarousel, {
+  categoryData,
+} from "../../Components/CategoryCarousel";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
+  const navigate = useNavigate();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
+  const [value, setValue] = useState<number>(0);
+
+  const handleChange = (newValue: number, event: React.SyntheticEvent) => {
+    setValue(newValue);
+  };
 
   return (
     <Fragment>
       <section className="product-details">
-        <div className="header-top">
-          <nav aria-label="breadcrumb" className="breadcrumb-nav">
-            <div className="container">
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className="breadcrumb-item">
-                  <a href="#">Women</a>
-                </li>
-                <li className="breadcrumb-item active" aria-current="page">
-                  Shorts
-                </li>
-              </ol>
-            </div>
-          </nav>
-        </div>
-        <div className="container p-5">
+        <div className="container py-5">
           <div className="row justify-content-center">
-            <div className="col-10 row">
+            <div className="header-top col-12">
+              <nav aria-label="breadcrumb" className="breadcrumb-nav">
+                <div className="container">
+                  <ol className="breadcrumb">
+                    <li className="breadcrumb-item">
+                      <Link to="/">Home</Link>
+                    </li>
+                    <li className="breadcrumb-item">
+                      <a href="#">Women</a>
+                    </li>
+                    <li className="breadcrumb-item active" aria-current="page">
+                      Shorts
+                    </li>
+                  </ol>
+                </div>
+              </nav>
+            </div>
+            <div className="col-12 row">
               <div className="col-md-6">
                 <Swiper
                   spaceBetween={10}
@@ -116,13 +134,100 @@ const ProductDetails = () => {
                   <button></button>
                   <button></button>
                 </div>
+                <hr />
+                <p>QUANTITY : </p>
+                <div className="input-group ">
+                  <span className="input-group-btn input-group-prepend">
+                    <button
+                      className="btn btn-outline btn-down qty-btn"
+                      type="button"
+                    >
+                      <FaMinus />
+                    </button>
+                  </span>
+                  <input className="horizontal-quantity " type="text" />
+                  <span className="input-group-btn input-group-append">
+                    <button className="btn btn-outline qty-btn" type="button">
+                      <FaPlus />
+                    </button>
+                  </span>
+                </div>
+                <hr />
+                <div className="btn-group  row w-100 justify-content-center gap-5">
+                  <button
+                    className="add-to-cart col-md-5 d-flex justify-content-center align-items-center gap-2"
+                    onClick={() => {
+                      navigate("/checkout/cart");
+                    }}
+                  >
+                    ADD TO CART <FaShoppingCart />
+                  </button>
+                  <button className="wish-list col-md-5 d-flex justify-content-center align-items-center gap-2">
+                    WISH LIST <FaRegHeart />
+                  </button>
+                </div>
               </div>
-            </div>  
+            </div>
+          </div>
+        </div>
+        <div className="container py-2 spec-reviews">
+          <div className="row">
+            <div className="col-12">
+              <Tabs
+                value={value}
+                onChange={(event, newValue) => handleChange(newValue, event)}
+                className="tabs"
+              >
+                <Tab label="Description" className="tab" />
+                <Tab label="Specification" className="tab" />
+                <Tab label="Reviews" className="tab" />
+                <Tab label="Size Guide" className="tab" />
+              </Tabs>
+
+              <div hidden={value !== 0}>
+                <div className="row col-md-12 portfolio-container py-5">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Unde corrupti optio itaque? Dolorum accusantium vitae
+                    explicabo culpa suscipit doloremque quae error ratione ex
+                    voluptate architecto ipsa eaque recusandae pariatur,
+                    inventore fuga, aliquam velit nostrum magnam rem itaque
+                    porro veritatis rerum.
+                  </p>
+                </div>
+              </div>
+              <div hidden={value !== 1}>
+                <div className="row col-md-12 portfolio-container py-5">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nisi, voluptatum eveniet! Suscipit, pariatur aut. Beatae
+                    dicta reprehenderit aut nesciunt soluta commodi hic natus
+                    impedit pariatur. Aliquid omnis accusamus in incidunt?
+                  </p>
+                </div>
+              </div>
+              <div hidden={value !== 2}>
+                <div className="row col-md-12 portfolio-container py-5">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Labore quia sapiente nihil, aut illo molestias vel
+                    quibusdam! Molestiae laboriosam reiciendis, odio excepturi
+                    sequi esse ipsa labore exercitationem architecto iusto
+                    maiores.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container mt-5">
+          <h1 className="text-uppercase fs-4 fw-400">You May Also Like</h1>
+          <div className="row mt-5">
+            <CategoryCarousel />
           </div>
         </div>
       </section>
     </Fragment>
   );
 };
-
 export default ProductDetails;

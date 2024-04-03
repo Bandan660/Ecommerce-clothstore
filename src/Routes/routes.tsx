@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Loader from "../Components/Loader";
 import Shop from "../Pages/MainScreen/Shop";
 import ProductDetails from "../Pages/MainScreen/ProductDetails";
+import Cart from "../Pages/MainScreen/Cart";
 const Home = lazy(() => import("../Pages/MainScreen/Home"));
 
 // importing routes for admin
@@ -32,6 +33,7 @@ const Routing = () => {
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/checkout/cart" element={<Cart />} />
           {/* define routes for admin */}
           <Route
           // element={
